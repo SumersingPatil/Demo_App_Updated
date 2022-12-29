@@ -1,0 +1,95 @@
+<app-header></app-header>
+<br>
+<br>
+<section class="mb-5">
+    <div class="container mt-7">
+        <div class="row">
+            <div class="col-12 col-md-12 col-sm-12">
+                <div class="card shadow border-primary">
+                   <div class="card-header border-0 bg-primary">
+               <h5 class="mb-0 text-white">Add Item</h5>
+                   </div>
+                   <form style="padding:20px">
+               
+                    <div class="form-group row">
+                        <label class="col-md-2 col-sm-4 col-form-label mt-2">User Name</label>
+                        <div class="col-md-4 col-sm-8 mt-2">
+                            <input [(ngModel)]="productstbls.username" type="text" class="form-control" name="username"  />
+                        </div>
+                        <label class="col-md-2 col-sm-4 col-form-label mt-2">Item Code</label>
+                        <div class="col-md-4 col-sm-8 mt-2">
+                            <input [(ngModel)]="productstbls.itemcode" type="text" class="form-control" name="itemcode"  />
+                        </div>
+                        <label class="col-md-2 col-sm-4 col-form-label mt-2">Description</label>
+                        <div class="col-md-4 col-sm-8 mt-2">
+                            <input [(ngModel)]="productstbls.desc" type="text" class="form-control" name="productdesc"  />
+                        </div>
+
+                        <label class="col-md-2 col-sm-4 col-form-label mt-2">Packaging</label>
+                        <div class="col-md-4 col-sm-8 mt-2">
+                            <input [(ngModel)]="productstbls.packging" type="text" class="form-control" name="packging"  />
+                        </div>
+
+                        <label class="col-md-2 col-sm-4 col-form-label mt-2">Unit</label>
+                        <div class="col-md-4 col-sm-8 mt-2">
+                            <input [(ngModel)]="productstbls.unit" type="text" class="form-control" name="unit"  />
+                        </div>
+                        <label class="col-md-2 col-sm-4 col-form-label mt-2">Photo</label>
+                        <div class="col-md-4 col-sm-8 mt-2">
+                            <input [(ngModel)]="productstbls.photo" type="text" class="form-control" name="photo"  />
+                        </div>
+                        
+                    </div>
+
+                    
+
+                    
+
+                    
+                    
+                    <div class="text-center" >
+                        <button type="submit"  class="btn btn-primary" (click)="AddProduct()" >Submit</button>
+                    </div>
+            </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mb-5" style="padding-bottom: 100px;">
+   <div class="container">
+    <div class="row">
+    <div class="col-12">
+        <div class="card shadow border-primary">
+            <div class="card-header border-0 bg-primary">
+                <h5 class="mb-0 text-white">Manage Product</h5>
+                    </div>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">User Name </th>
+                        <th scope="col">Item Code </th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Packaging</th>
+                        <th scope="col">Unit</th>
+                        <th scope="col">Photo</th>
+                    </tr>
+                   <tr *ngFor="let prod of getData">
+                        <td>{{prod.username}}</td>
+                        <td>{{prod.itemcode}}</td>
+                        <td>{{prod.desc}}</td>
+                        <td>{{prod.packging}}</td>
+                        <td>{{prod.unit}}</td>
+                        <td>{{prod.photo}}</td>
+                        
+                    </tr>
+                
+                </thead>
+            </table>
+           </div>          
+        </div>
+    </div>
+    </div>
+   </div>
+</section>
